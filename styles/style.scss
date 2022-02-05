@@ -1,0 +1,328 @@
+// Наслдеование
+%column {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 24px;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+// Базовые цвета
+$color-primary: #5A54FF;
+$color-border: #79747e80;
+// Стили для блоков "button"
+.button {
+  border-radius: 4px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  min-width: 100px;
+  padding: 10px 0;
+  &_secondary {
+    color: $color-primary;
+    background: white;
+  }
+  &_primary {
+    color: white;
+    background: $color-primary;
+  }
+  &_header {
+    width: 18vw;
+    margin-top: 15px;
+  }
+  &_wide {
+    padding: 10px 30px;
+  }
+  &:hover {
+    transform: scale(1.05);
+    transition: .5s;
+  }
+  &:focus {
+    animation-name: button-focus;
+    animation-duration: 1s;
+  }
+}
+@keyframes button-focus {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(.95);
+  }
+  75% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+// Стили для блоков "card"
+.card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 5px;
+  border: 1px solid $color-border;
+  padding: 30px;
+  border-radius: 4px;
+  &__number {
+    text-align: left;
+    color: $color-primary;
+    font-weight: 500;
+    font-size: 34px;
+  }
+  &__icon {
+    text-align: left;
+    color: $color-primary;
+    font-size: 34px;
+    margin: 10px 0;
+    align-self: center;
+  }
+  &__title {
+    align-self: center;
+  }
+  &__description {
+    grid-column: 1 / 3;
+    font-size: 14px;
+  }
+  &__action {
+    grid-column: 2 / 3;
+    justify-self: end;
+    text-align: right;
+    margin-top: 15px;
+  }
+  &__monogram {
+    align-self: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: $color-primary;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  // Стили для блоков с выделеным заголовком
+  &__header {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 15px;
+    margin-bottom: 7.5px;
+  }
+  &__header > &__monogram {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+  &__header-title {
+    grid-column: 2 / 3;
+  }
+  &__header-subtitle {
+    grid-column: 2 / 3;
+  }
+  // Стили для активных блоков
+  &_active {
+    border-color: $color-primary;
+  }
+  // Стили для не активных блоков
+  &_disable {
+    opacity: .7;
+    padding: 15px 30px 7.5px 30px;
+  }
+  &_disable > &__action {
+    display: none;
+  }
+  &_disable > &__description {
+    display: none;
+  }
+  &_disable > &__title {
+    font-weight: 400;
+    grid-row: 1 / 3;
+  }
+  &_disable > &__icon {
+    grid-row: 1 / 3;
+  }
+  // Стили для блоков с большим текстом
+  &__large-text-action {
+    margin-top: 30px;
+  }
+}
+// Заголовки согласно макету сайта
+h1 {
+  font-size: 34px;
+  font-weight: 700;
+}
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 60px;
+}
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+h5 {
+  font-size: 14px;
+  font-weight: 400;
+}
+// Стили для первого блока, приветсвие
+.header {
+  @extend %column;
+  align-items: center;
+  min-height: 100vh;
+  color: black;
+  &__content {
+    grid-column: 1 / 5;
+  }
+  &__subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+  &__title {
+    margin: 15px 0;
+  }
+  &__description {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 15px 0;
+  }
+  &-background {
+    position: absolute;
+    left: 0;
+    top: -40%;
+    height: auto;
+    width: 50vw;
+    z-index: -1;
+  }
+  &__image {
+    grid-row: 1 / 2;
+    grid-column: 8 / 13;
+  }
+}
+// Стили для блока с карточками рекомендаций
+.recommendations {
+  @extend %column;
+  margin-top: 120px;
+  &__title {
+    grid-column: 1 / 9;
+  }
+  &__cards {
+    grid-column: 1 / 13;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+  }
+  &__image {
+    justify-self: center;
+    align-self: center;
+  }
+}
+
+.editor {
+  @extend %column;
+  margin-top: 120px;
+  &__title {
+    grid-column: 1 / 9;
+  }
+  &__textarea-wrapper {
+    grid-column: 1 / 7;
+  }
+  &__textarea {
+    resize: none;
+    width: 100%;
+    height: 512px;
+    border: 1px solid $color-border;
+    border-radius: 4px;
+    padding: 20px 30px;
+    font-family: inherit;
+    font-size: 16px;
+  }
+  &__textarea-action {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    grid-gap: 30px;
+    .button {
+      width: 100%;
+    }
+  }
+  &__struct-cards {
+    grid-column: 7 / 13;
+    grid-gap: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  // &__card > .card__description {
+  //   margin-top: 10px;
+  // }
+  &__image {
+    position: absolute;
+    right: 15vw;
+    z-index: -1;
+  }
+}
+
+.example {
+  margin-top: 120px;
+  @extend %column;
+  &__title {
+    grid-column: 1 / 9;
+    margin-bottom: 60px;
+  }
+  &__content {
+    grid-column: 1 / 13;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 24px;
+  }
+}
+
+.example-card {
+  align-self: flex-start;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto 1fr;
+  border-radius: 4px;
+  border: 1px solid $color-border;
+  padding: 30px;
+  &__monogram {
+    background: $color-primary;
+    color: white;
+    font-weight: 400;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__content {
+    margin-top: 30px;
+    font-size: 14px;
+    grid-column: 1 / 3;
+  }
+  &__action {
+    grid-column: 1 / 3;
+    margin-top: 30px;
+    justify-self: end;
+  }
+  
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
