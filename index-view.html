@@ -1,248 +1,205 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <title>Make cover latter</title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Сброс базовых надстроек css -->
-    <link rel="stylesheet" href="./styles/normalize.css" />
-    <!-- Основные стили страницы -->
-    <link rel="stylesheet" href="./styles/style.css" />
-    <!-- Загрузка шрифта Roboto, Начертания: 400, 500, 700 -->
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Загрузка шрифта Material icons -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="header">
-      <!-- <img src="./contents/Background-linear.svg" alt="background" class="header-background"> -->
-      <div class="header__content">
-        <h3 class="header__subtitle">Полезные советы</h3>
-        <h1 class="header__title">Сопроводительное письмо</h1>
-        <p class="header__description">
-          Если вы хотите привлечь дополнительное внимание рекрутера к своему
-          резюме и произвести на него хорошее впечатление
-        </p>
-        <a href="#editor">
-          <button class="button button_primary button_header">Написать</button>
-        </a>
-      </div>
-      <img
-        src="./contents/Application-media.svg"
-        alt="cover later header image"
-        class="header__image"
-      />
-    </header>
-    <div class="recommendations">
-      <h2 class="recommendations__title">
+
+<head>
+  <title>Make cover latter</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Сброс базовых надстроек css -->
+  <link rel="stylesheet" href="./styles/normalize.css" />
+  <!-- Основные стили страницы -->
+  <link rel="stylesheet" href="./styles/style.css" />
+  <!-- Загрузка шрифта Roboto, Начертания: 400, 500, 700 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+  rel="stylesheet" />
+  <!-- Загрузка шрифта Material icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
+  />
+  <!-- Загрузка библиотеки VueJS -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <!-- <img src="./contents/Background-linear.svg" alt="background" class="header-background"> -->
+    <div class="header__content">
+      <h3 class="header__subtitle">Полезные советы</h3>
+      <h1 class="header__title">Сопроводительное письмо</h1>
+      <p class="header__description">
+        Если вы хотите привлечь дополнительное внимание рекрутера к своему резюме
+        и произвести на него хорошее впечатление
+      </p>
+      <a href="#editor">
+        <button class="button button_primary button_header">Написать</button>
+      </a>
+    </div>
+    <img src="./contents/Application-media.svg" alt="cover later header image"
+    class="header__image" />
+  </header>
+  <div class="recommendations">
+    <h2 class="recommendations__title">
         Советы, которые помогут вам составить продающее сопроводительное письмо
       </h2>
-      <div class="recommendations__cards">
-        <div class="card">
-          <h1 class="card__number">1</h1>
-          <h4 class="card__title">Не используйте клише</h4>
-          <p class="card__description">
-            Прочитайте письмо еще раз, и уберите из него любые клише или
-            банальности, которые не несут никакой значимой и конкретной
-            информации о вас. Например, не пишите, что вы «ответственный,
-            коммуникабельный, исполнительный, трудолюбивый, честный и т. д.».
-            Это все пишут и об этом даже не стоит упоминать.
-          </p>
-        </div>
-        <div class="card">
-          <h1 class="card__number">2</h1>
-          <h4 class="card__title">Семь раз проверьте</h4>
-          <p class="card__description">
-            Сопроводительное письмо должно быть написано в соответствии со всеми
-            правилами синтаксиса и пунктуации, а также стилистики. Не забывайте
-            проверить текст письма на грамматические ошибки. Пословица: «Семь
-            раз отмерь, один раз отрежь», как нельзя лучше подходит для этого
-            случая.
-          </p>
-        </div>
-        <img
-          src="./contents/Recommendation-image.svg"
-          alt="Recommendation image"
-          class="recommendations__image"
-        />
-        <div class="card">
-          <h1 class="card__number">3</h1>
-          <h4 class="card__title">Будьте кратки</h4>
-          <p class="card__description">
-            Укажите в сопроводительном письме только необходимую информацию в
-            сжатом виде. Представьте, что у вас есть всего 15 секунд, чтобы
-            убедить работодателя встретиться с вами. Что бы вы ему сказали?
-            Вставьте это в свое сопроводительное письмо.
-          </p>
-          <p class="card__description">
-            Рекрутеры слишком заняты, чтобы читать длинные сопроводительные
-            письма, напоминающие эссе. Поэтому делите текст на маленькие абзацы,
-            используя по необходимости маркированный список.
-          </p>
-        </div>
+    <div class="recommendations__cards">
+      <div class="card">
+        <h1 class="card__number">1</h1>
+        <h4 class="card__title">Не используйте клише</h4>
+        <p class="card__description">
+          Прочитайте письмо еще раз, и уберите из него любые клише или банальности,
+          которые не несут никакой значимой и конкретной информации о вас.
+          Например, не пишите, что вы «ответственный, коммуникабельный,
+          исполнительный, трудолюбивый, честный и т. д.». Это все пишут
+          и об этом даже не стоит упоминать.
+        </p>
+      </div>
+      <div class="card">
+        <h1 class="card__number">2</h1>
+        <h4 class="card__title">Семь раз проверьте</h4>
+        <p class="card__description">
+          Сопроводительное письмо должно быть написано в соответствии со всеми правилами
+          синтаксиса и пунктуации, а также стилистики. Не забывайте проверить
+          текст письма на грамматические ошибки. Пословица: «Семь раз отмерь,
+          один раз отрежь», как нельзя лучше подходит для этого случая.
+        </p>
+      </div>
+      <img src="./contents/Recommendation-image.svg" alt="Recommendation image"
+      class="recommendations__image" />
+      <div class="card">
+        <h1 class="card__number">3</h1>
+        <h4 class="card__title">Будьте кратки</h4>
+        <p class="card__description">
+          Укажите в сопроводительном письме только необходимую информацию в сжатом
+          виде. Представьте, что у вас есть всего 15 секунд, чтобы убедить
+          работодателя встретиться с вами. Что бы вы ему сказали? Вставьте
+          это в свое сопроводительное письмо.
+        </p>
+        <p class="card__description">
+          Рекрутеры слишком заняты, чтобы читать длинные сопроводительные письма,
+          напоминающие эссе. Поэтому делите текст на маленькие абзацы,
+          используя по необходимости маркированный список.
+        </p>
       </div>
     </div>
-    <div class="editor">
-      <img src="./contents/Bird.svg" class="editor__image" alt="bird" />
-      <h2 class="editor__title" id="editor">
+  </div>
+  <div class="editor" id="editor">
+    <div class="alert-message" v-show="is_show_alert">
+      <span class="material-icons">
+        content_copy
+      </span>
+      Текст успешно скопирован 
+    </div>
+    <img src="./contents/Bird.svg" class="editor__image" alt="bird" />
+    <h2 class="editor__title" id="editor">
         Написать сопроводительное письмо
       </h2>
-      <div class="editor__textarea-wrapper">
-        <textarea class="editor__textarea">
-Добрый день!
-Меня заинтересовала вакансия
-      </textarea
-        >
-        <div class="editor__textarea-action">
-          <button class="button button_secondary">Проверка орфографии</button>
-          <button class="button button_primary">Копировать</button>
-        </div>
+    <div class="editor__textarea-wrapper">
+      <div class="editor__textarea">
+
+        <span class="editor__textarea-content" @click="edit_raw()" v-html="get_textarea()"></span>
+        <textarea v-model="textarea"></textarea>
+
       </div>
-      <div class="editor__struct-cards">
-        <div class="card card_active">
-          <span class="card__icon material-icons">mood</span>
-          <h4 class="card__title">Поприветствуйте рекрутера</h4>
-          <p class="card__description">
-            Любое письмо начинается с персонального приветствия. Очень важно в
-            сопроводительном письме указывать имя адресата, к которому вы
-            обращаетесь. В большинстве вакансий указывается имя, кому отправлять
-            резюме.
-          </p>
-          <button class="card__action button button_secondary">Далее</button>
-        </div>
-        <div class="card card_disable">
-          <span class="card__icon material-icons">radio_button_unchecked</span>
-          <h4 class="card__title">
-            Напишите, на какую вакансию вы претендуете
-          </h4>
-          <p class="card__description">
-            Любое письмо начинается с персонального приветствия. Очень важно в
-            сопроводительном письме указывать имя адресата, к которому вы
-            обращаетесь. В большинстве вакансий указывается имя, кому отправлять
-            резюме.
-          </p>
-          <button class="card__action button button_secondary">Далее</button>
-        </div>
-        <div class="card card_disable">
-          <span class="card__icon material-icons">radio_button_unchecked</span>
-          <h4 class="card__title">
-            Напишите, на какую вакансию вы претендуете
-          </h4>
-          <p class="card__description">
-            Любое письмо начинается с персонального приветствия. Очень важно в
-            сопроводительном письме указывать имя адресата, к которому вы
-            обращаетесь. В большинстве вакансий указывается имя, кому отправлять
-            резюме.
-          </p>
-          <button class="card__action button button_secondary">Далее</button>
-        </div>
+      <div class="editor__textarea-action">
+        <button class="button button_secondary">Проверка орфографии</button>
+        <button class="button button_primary" @click="copy_textarea()">Копировать</button>
       </div>
     </div>
-    <div class="example">
-      <h2 class="example__title">Готовые примеры письма</h2>
-      <div class="example__content">
-        <div class="card">
-          <div class="card__header">
-            <div class="card__monogram">A</div>
-            <h3 class="card__header-title">Алиса</h3>
-            <h5 class="card__header-subtitle">
+    <div class="editor__struct-cards">
+      <div class="card" v-for="(card, index) in struct_cards" :class="{card_disable: active_struct_card_index != index, card_active: active_struct_card_index == index}">
+        <span class="card__icon material-icons">{{card.icon}}</span>
+        <h4 class="card__title">{{card.title}}</h4>
+        <p class="card__description">
+          {{card.description}}
+        </p>
+        <button v-show="!is_last_strict_card()" class="card__action button button_secondary"
+        @click="active_struct_card_next()">Далее</button>
+      </div>
+    </div>
+  </div>
+  <div class="example">
+    <h2 class="example__title">Готовые примеры письма</h2>
+    <div class="example__content">
+      <div class="card">
+        <div class="card__header">
+          <div class="card__monogram">A</div>
+          <h3 class="card__header-title">Алиса</h3>
+          <h5 class="card__header-subtitle">
               Позиция «Ассистент бренд-менеджера»
             </h5>
-          </div>
-          <div class="card__description">
-            <p>
-              «Добрый день! Меня заинтересовала позиция PR-менеджера, т.к. хочу
-              заниматься любимым делом в интересной и перспективной компании. Я
-              хорошо знакома с вашей компанией. С удовольствием слушаю ваши
-              выступления и кейсы на конференциях, читаю соцсети, формат которых
-              нахожу необычным и интересным. Хотела бы стать частью вашей
-              команды, чтобы генерировать PR-идеи, работать со СМИ и создавать
-              качественные тексты. Имею высшее образование в сфере маркетинга и
-              PR, а также успешный опыт работы на должности маркетолога.
-              Занималась написанием и редактированием статей, а также рекламой,
-              продвижением, общением с клиентами, подготовкой мероприятий и
-              презентаций. Привыкла решать сложные задачи и быстро понимать, что
-              от меня требуется. Владею английским языком (уровень
-              intermediate), в настоящее время продолжаю его изучение. С более
-              детальной информацией о моей профессиональной деятельности вы
-              сможете ознакомиться в резюме. Благодарю за время, уделенное моей
-              кандидатуре. С уважением, Алиса. Тел. ..., e-mail ...»*.
-            </p>
-          </div>
-          <div class="card__action card__large-text-action">
-            <button class="button button_primary button_wide">Использовать</button>
-          </div>
         </div>
-        <div class="card">
-          <div class="card__header">
-            <div class="card__monogram">М</div>
-            <h3 class="card__header-title">Марк</h3>
-            <h5 class="card__header-subtitle">
+        <div class="card__description">
+          <p>
+            «Добрый день! Меня заинтересовала позиция PR-менеджера, т.к. хочу заниматься
+            любимым делом в интересной и перспективной компании. Я хорошо
+            знакома с вашей компанией. С удовольствием слушаю ваши выступления
+            и кейсы на конференциях, читаю соцсети, формат которых нахожу
+            необычным и интересным. Хотела бы стать частью вашей команды,
+            чтобы генерировать PR-идеи, работать со СМИ и создавать качественные
+            тексты. Имею высшее образование в сфере маркетинга и PR, а
+            также успешный опыт работы на должности маркетолога. Занималась
+            написанием и редактированием статей, а также рекламой, продвижением,
+            общением с клиентами, подготовкой мероприятий и презентаций.
+            Привыкла решать сложные задачи и быстро понимать, что от меня
+            требуется. Владею английским языком (уровень intermediate),
+            в настоящее время продолжаю его изучение. С более детальной
+            информацией о моей профессиональной деятельности вы сможете
+            ознакомиться в резюме. Благодарю за время, уделенное моей кандидатуре.
+            С уважением, Алиса. Тел. ..., e-mail ...»*.
+          </p>
+        </div>
+        <div class="card__action card__large-text-action">
+          <button class="button button_primary button_wide">Использовать</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__header">
+          <div class="card__monogram">М</div>
+          <h3 class="card__header-title">Марк</h3>
+          <h5 class="card__header-subtitle">
               Позиция «Офис-менеджер»
             </h5>
-          </div>
-          <div class="card__description">
+        </div>
+        <div class="card__description">
+          <p>
             <p>
-              <p>
-                Уважаемый HR-менеджер! Меня заинтересовала вакансия на должность
-                офис-менеджер в Вашей компании. Мне очень близки ценности Вашей
-                компании, которые разделяют сотрудники, такие как: порядочность,
-                искренность, ответственность и амбициозность. Также я слышала
-                много положительных отзывов о работе в Вашей компании от своего
-                друга, который мне рассказал об этой вакансии. Позвольте мне
-                рассказать, почему я идеально подхожу для Вас:
-              </p>
-              <p>
-                Я выпускник МЭСИ, учился по специальности «Государственное и
-                муниципальное управление». Во время учебы я проходил практику в
-                таких компаниях, как «Венера» и «Марс». В мои обязанности входило:
-                подготовка и проверка договоров, а также создание различных типов
-                документов с помощью специальной офисной программы. Работа в этих
-                компаниях многому меня научила. Я расширил свои знания о ведении
-                документации и успешно применял их на практике. А также
-                познакомился с особенностями работы в офисе. я коммуникабельный и
-                ответственный человек. Умею эффективно работать в стрессовых
-                условиях. Быстро обучаюсь и с легкостью овладеваю новыми навыками.
-                Знаю в совершенстве два языка: английский и немецкий. Если у Вас
-                возникнут вопросы, можете позвонить мне по телефону: 123-45-67-89
-                или написать сообщение по email. С уважением.
-              </p>
+              Уважаемый HR-менеджер! Меня заинтересовала вакансия на должность офис-менеджер
+              в Вашей компании. Мне очень близки ценности Вашей компании,
+              которые разделяют сотрудники, такие как: порядочность, искренность,
+              ответственность и амбициозность. Также я слышала много положительных
+              отзывов о работе в Вашей компании от своего друга, который
+              мне рассказал об этой вакансии. Позвольте мне рассказать,
+              почему я идеально подхожу для Вас:
             </p>
-          </div>
-          <div class="card__action card__large-text-action">
-            <button class="button button_primary button_wide">Использовать</button>
-          </div>
+            <p>
+              Я выпускник МЭСИ, учился по специальности «Государственное и муниципальное
+              управление». Во время учебы я проходил практику в таких компаниях,
+              как «Венера» и «Марс». В мои обязанности входило: подготовка
+              и проверка договоров, а также создание различных типов документов
+              с помощью специальной офисной программы. Работа в этих компаниях
+              многому меня научила. Я расширил свои знания о ведении документации
+              и успешно применял их на практике. А также познакомился с
+              особенностями работы в офисе. я коммуникабельный и ответственный
+              человек. Умею эффективно работать в стрессовых условиях.
+              Быстро обучаюсь и с легкостью овладеваю новыми навыками.
+              Знаю в совершенстве два языка: английский и немецкий. Если
+              у Вас возникнут вопросы, можете позвонить мне по телефону:
+              123-45-67-89 или написать сообщение по email. С уважением.
+            </p>
+          </p>
+        </div>
+        <div class="card__action card__large-text-action">
+          <button class="button button_primary button_wide">Использовать</button>
         </div>
       </div>
     </div>
-    <footer class="footer">
-      <!-- <img
-        src="./contents/Footer-left-image.svg"
-        alt="footer image"
-        class="footer__left-image"
-      />
-      <img
-        src="./contents/Footer-right-image.svg"
-        alt="footer right"
-        class="footer__right-image"
-      /> -->
-    </footer>
-  </body>
-  <script src="./scripts/anchorSlowMotion.js"></script>
+  </div>
+  <footer class="footer">
+  </footer>
+</body>
+<script src="./scripts/anchorSlowMotion.js"></script>
+<script src="./scripts/vue.js"></script>
+
 </html>
